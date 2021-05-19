@@ -1540,18 +1540,18 @@ tsetattr(int *attr, int l)
 		case 49:
 			term.c.attr.bg = defaultbg;
 			break;
-+		case 58:
-+			term.c.attr.ucolor[0] = csiescseq.carg[i][1];
-+			term.c.attr.ucolor[1] = csiescseq.carg[i][2];
-+			term.c.attr.ucolor[2] = csiescseq.carg[i][3];
-+			term.c.attr.mode ^= ATTR_DIRTYUNDERLINE;
-+			break;
-+		case 59:
-+			term.c.attr.ucolor[0] = -1;
-+			term.c.attr.ucolor[1] = -1;
-+			term.c.attr.ucolor[2] = -1;
-+			term.c.attr.mode ^= ATTR_DIRTYUNDERLINE;
-+			break;
+		case 58:
+			term.c.attr.ucolor[0] = csiescseq.carg[i][1];
+			term.c.attr.ucolor[1] = csiescseq.carg[i][2];
+			term.c.attr.ucolor[2] = csiescseq.carg[i][3];
+			term.c.attr.mode ^= ATTR_DIRTYUNDERLINE;
+			break;
+		case 59:
+			term.c.attr.ucolor[0] = -1;
+			term.c.attr.ucolor[1] = -1;
+			term.c.attr.ucolor[2] = -1;
+			term.c.attr.mode ^= ATTR_DIRTYUNDERLINE;
+			break;
 		default:
 			if (BETWEEN(attr[i], 30, 37)) {
 				term.c.attr.fg = attr[i] - 30;
